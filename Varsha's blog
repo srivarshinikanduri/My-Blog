@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Blog - Artificial Intelligence</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>AI Blog</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <section class="intro">
+            <h2>Welcome to the Future of AI!</h2>
+            <p>Artificial Intelligence is transforming industries, shaping our world, and pushing the boundaries of technology. Explore the wonders of AI!</p>
+        </section>
+
+        <!-- Blog Posts -->
+        <section id="blog-posts" class="container">
+            <article class="post">
+                <div class="post-image">
+                    <img src="https://via.placeholder.com/800x400?text=AI+Blog+Post+1" alt="AI Post 1">
+                </div>
+                <div class="post-content">
+                    <h3>The Rise of Artificial Intelligence</h3>
+                    <p>AI is rapidly changing the way we interact with technology. Learn about its rise and the impact on various industries...</p>
+                    <button onclick="toggleContent('post1')">Read More</button>
+                    <div id="post1" class="full-content">
+                        <p>From healthcare to finance, AI is being used to automate processes, improve decision-making, and even create new solutions. The future looks bright as AI continues to evolve...</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post">
+                <div class="post-image">
+                    <img src="https://via.placeholder.com/800x400?text=AI+Blog+Post+2" alt="AI Post 2">
+                </div>
+                <div class="post-content">
+                    <h3>Machine Learning: The Heart of AI</h3>
+                    <p>Machine learning is one of the most important aspects of AI. Let's dive deep into what makes machine learning so revolutionary...</p>
+                    <button onclick="toggleContent('post2')">Read More</button>
+                    <div id="post2" class="full-content">
+                        <p>Machine learning uses algorithms to analyze data, learn from it, and make predictions. It powers everything from recommendation systems to self-driving cars...</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- More posts can be added here -->
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 AI Blog. All Rights Reserved. | Made with ♥ by You</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #f8f8f8;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header Section */
+header {
+    background-color: #282828;
+    padding: 20px 0;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    text-align: center;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Section */
+main {
+    padding: 50px 0;
+    background: #fff;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.intro h2 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.intro p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Blog Post Section */
+#blog-posts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.post {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.post:hover {
+    transform: translateY(-10px);
+}
+
+.post-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.post h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.post p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Full content style */
+.full-content {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #333;
+    display: none;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #282828;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #blog-posts {
+        grid-template-columns: 1fr;
+    }
+}
+// JavaScript function to toggle content visibility
+function toggleContent(postId) {
+    var content = document.getElementById(postId);
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+    } else {
+        content.style.display = "none";
+    }
+}
